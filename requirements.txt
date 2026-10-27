@@ -1,0 +1,83 @@
+# ============================================================
+# PyNavicat 依赖清单
+# 适用版本：PySide6 6.5+ / SQLAlchemy 2.0+ / Python 3.10+
+# 安装：pip install -r requirements.txt
+# ============================================================
+
+# ---------- 核心必需 ----------
+PySide6>=6.5
+SQLAlchemy>=2.0
+
+# ---------- 密码存储 / 加密 ----------
+# keyring 优先（Windows Credential Manager / macOS Keychain / Linux SecretService）
+# 不可用时回退到本地 Fernet 加密（依赖 cryptography）
+keyring>=24.0
+cryptography>=41.0
+
+# ---------- SQL 格式化 ----------
+sqlparse>=0.4.4
+
+# ---------- 导入导出 ----------
+openpyxl>=3.1
+
+# ---------- SSH 隧道 ----------
+sshtunnel>=0.4
+
+
+# ============================================================
+# 数据库驱动（按需安装）
+# ============================================================
+
+# ---------- MySQL 协议族（MySQL / MariaDB / TiDB / OceanBase）----------
+PyMySQL>=1.1
+
+# ---------- PostgreSQL 协议族（PostgreSQL / CockroachDB / KingBase）----------
+psycopg2-binary>=2.9
+
+# ---------- SQLite ----------
+# Python 标准库内置，无需安装
+
+# ---------- SQL Server ----------
+# 需要额外的系统级 ODBC 驱动：
+#   Microsoft ODBC Driver 17/18 for SQL Server
+# pyodbc>=5.0
+
+# ---------- Oracle ----------
+# oracledb 为 thin 模式（纯 Python，无需 Instant Client）
+# oracledb>=2.0
+
+# ---------- DuckDB ----------
+# duckdb-engine 会自动安装 duckdb
+# duckdb-engine>=0.9
+
+# ---------- ClickHouse ----------
+# 使用 HTTP 接口（clickhouse+http 驱动）
+# clickhouse-sqlalchemy>=0.2
+# clickhouse-connect>=0.7
+
+# ---------- Trino ----------
+# trino[sqlalchemy]>=0.327
+
+# ---------- IBM DB2 ----------
+# 需额外安装系统级 DB2 客户端
+# ibm-db-sa>=0.3
+# ibm-db>=3.1
+
+# ---------- Firebird ----------
+# sqlalchemy-firebird>=0.7
+# fdb>=2.0
+
+
+# ============================================================
+# 可选：Linux 上 keyring 需要 SecretService 后端
+# ============================================================
+# secretstorage>=3.3
+# keyrings.alt>=4.2      # 无桌面环境时的兜底后端
+
+
+# ============================================================
+# 可选：开发 / 打包
+# ============================================================
+# ruff>=0.4
+# pytest>=8.0
+# pyinstaller>=6.0

@@ -1,0 +1,18 @@
+dbclient/
+├── main.py
+├── requirements.txt
+├── PyNavicat.spec
+└── dbclient/
+    ├── __init__.py
+    ├── connection.py
+    ├── engine.py
+    ├── schema_ddl.py
+    ├── io_tools.py
+    ├── sql_util.py
+    ├── dialogs.py
+    ├── main_window.py
+    └── widgets/
+        ├── __init__.py
+        ├── sql_editor.py
+        ├── result_view.py
+        └── query_tab.py
